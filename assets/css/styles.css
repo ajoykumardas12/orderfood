@@ -179,10 +179,11 @@ header button {
   align-items: center;
   gap: 5rem;
   background: linear-gradient(to right, var(--pink), var(--yellow));
+  text-align: center;
 }
 
 .section-heading {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 8vw, 3rem);
   letter-spacing: 0.05em;
   color: var(--light);
 }
@@ -204,7 +205,6 @@ header button {
   background: var(--light);
   color: var(--dark);
   border-radius: 0 4.3rem 0 4.3rem;
-  text-align: center;
 }
 
 .order-now-card-image {
@@ -229,4 +229,28 @@ header button {
   font-weight: 600;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .order-now-section {
+    padding: 5rem 2.5rem 5rem;
+  }
+  .order-now-cards-container {
+    gap: 2.5rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .order-now-section {
+    padding: 5rem 2rem 5rem;
+  }
+  .order-now-cards-container {
+    gap: 3rem;
+  }
+  .order-now-card {
+    padding: 1.3rem;
+  }
+  .section-cta-button {
+    padding: 0.8rem 3rem;
+    font-size: 1.1rem;
+  }
 }
