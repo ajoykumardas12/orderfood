@@ -15,6 +15,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   font-family: "Roboto", sans-serif;
@@ -43,13 +48,15 @@ header {
   color: var(--dark);
   font-size: 1.2rem;
   font-weight: 500;
+  position: sticky;
+  top: 0;
 }
 
 .hamburger-menu {
   visibility: hidden;
 }
 
-nav ul {
+.nav-items {
   list-style: none;
   display: flex;
   align-items: center;
@@ -60,6 +67,47 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+}
+
+header button {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger-menu {
+    visibility: visible;
+  }
+
+  .hamburger-close-btn {
+    display: none;
+  }
+
+  .hamburger-menu-active .hamburger-close-btn {
+    display: flex;
+  }
+
+  .hamburger-menu-active .hamburger-open-btn {
+    display: none;
+  }
+
+  .nav-items {
+    /* visibility: hidden; */
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: var(--header-height);
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    padding: 2rem;
+    background: var(--light);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .nav-items-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* ========== Hero ========== */

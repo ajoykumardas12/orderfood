@@ -21,14 +21,49 @@
   </head>
   <body>
     <header>
-      <div class="hamburger-menu"><button>H</button></div>
+      <div class="hamburger-menu">
+        <button class="hamburger-open-btn" id="hamburger-open-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000"
+            height="24px"
+            width="24px"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+            />
+          </svg>
+        </button>
+        <button class="hamburger-close-btn" id="hamburger-close-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000"
+            height="24px"
+            width="24px"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
       <nav>
-        <ul>
+        <ul class="nav-items" id="nav-items">
           <li>
             <a href="#">Home</a>
           </li>
           <li>
-            <a href="#">Order</a>
+            <a href="#order-now">Order</a>
           </li>
           <li>
             <a href="#">Food</a>
@@ -68,7 +103,7 @@
           </p>
         </div>
       </section>
-      <section class="order-now-section">
+      <section class="order-now-section" id="order-now">
         <h2 class="section-heading">Order Now</h2>
         <div class="order-now-cards-container">
           <div class="order-now-card">
@@ -108,5 +143,6 @@
         <button class="button section-cta-button">Order</button>
       </section>
     </main>
+    <script src="./assets/scripts/index.js"></script>
   </body>
 </html>
