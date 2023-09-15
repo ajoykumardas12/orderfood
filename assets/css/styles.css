@@ -4,6 +4,8 @@
   --yellow: #ffdd5a;
   --light: #ffffff;
   --dark: #000000;
+  --accent: rgba(243, 115, 121, 0.7);
+  --accent-full: rgba(243, 115, 121, 0.8);
 
   --header-height: 3.5rem;
 }
@@ -15,8 +17,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   scroll-behavior: smooth;
 }
 
@@ -35,6 +36,28 @@ button {
   border: none;
   cursor: pointer;
   font-size: inherit;
+}
+
+/* ========== Global Styles ========== */
+.link {
+  display: inline-block;
+  position: relative;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-full);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* ========== Header ========== */
@@ -135,20 +158,27 @@ header button {
   margin: 0 4rem;
   padding: 2.5rem;
   max-width: clamp(25rem, 42%, 35rem);
-  background: rgba(243, 115, 121, 0.7);
+  background: var(--accent);
   color: var(--light);
   letter-spacing: 0.04em;
+  transform: all 0.3s;
 }
+.hero-text:hover {
+  background: var(--accent-full);
+}
+
 .hero-heading {
   font-size: 3rem;
   font-weight: 500;
 }
+
 .hero-para {
   margin: 0.75rem 3.5rem 0 0;
   font-size: 1rem;
   line-height: 140%;
   font-weight: 300;
 }
+
 @media only screen and (max-width: 1024px) {
   .hero-heading {
     font-size: 2.5rem;
@@ -205,6 +235,14 @@ header button {
   background: var(--light);
   color: var(--dark);
   border-radius: 0 4.3rem 0 4.3rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.order-now-card:hover {
+  /* box-shadow: 4px 6px 8px hsl(0deg 0% 0% / 0.36); */
+  box-shadow: rgba(243, 115, 121, 0.4) 3px 3px, rgba(243, 115, 121, 0.3) 6px 6px,
+    rgba(243, 115, 121, 0.2) 9px 9px, rgba(243, 115, 121, 0.1) 12px 12px,
+    rgba(243, 115, 121, 0.05) 15px 15px;
 }
 
 .order-now-card-image {
@@ -229,6 +267,12 @@ header button {
   font-weight: 600;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 2rem;
+  transition: color 0.3s;
+}
+
+.section-cta-button:hover {
+  background: var(--accent);
+  outline: 1px solid var(--dark);
 }
 
 @media only screen and (max-width: 768px) {
