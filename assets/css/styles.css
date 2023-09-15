@@ -149,6 +149,27 @@ header button {
   line-height: 140%;
   font-weight: 300;
 }
+@media only screen and (max-width: 1024px) {
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-text {
+    max-width: clamp(25rem, 50%, 35rem);
+  }
+  .hero-para {
+    margin: 0.75rem 0rem 0 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .hero-text {
+    margin: 0 3rem;
+    padding: 2rem;
+  }
+}
 
 /* ========== Order-Now ========== */
 .order-now-section {

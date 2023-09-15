@@ -6,21 +6,21 @@ const hamburgerCloseBtn = document.getElementById("hamburger-close-btn");
 const navLinks = Array.from(navItems.children);
 
 // Hamburger open and close functionality
-hamburgerOpenBtn.addEventListener("click", () => {
+const openHamburgerMenu = () => {
   hamburgerMenu.classList.add("hamburger-menu-active");
   navItems.classList.add("nav-items-active");
-});
+};
 
-hamburgerCloseBtn.addEventListener("click", () => {
-  hamburgerMenu.classList.remove("hamburger-menu-active");
-  navItems.classList.remove("nav-items-active");
-});
-
-// Close active hamburger menu when clicked on nav links
 const closeHamburgerMenu = () => {
   hamburgerMenu.classList.remove("hamburger-menu-active");
   navItems.classList.remove("nav-items-active");
 };
+
+hamburgerOpenBtn.addEventListener("click", openHamburgerMenu);
+
+hamburgerCloseBtn.addEventListener("click", closeHamburgerMenu);
+
+// Close active hamburger menu when clicked on nav links
 
 navLinks.forEach((navLink) => {
   navLink.addEventListener("click", closeHamburgerMenu);
