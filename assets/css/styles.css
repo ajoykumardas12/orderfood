@@ -126,7 +126,6 @@ header button {
   }
 
   .nav-items {
-    /* visibility: hidden; */
     flex-direction: column;
     position: fixed;
     left: 0;
